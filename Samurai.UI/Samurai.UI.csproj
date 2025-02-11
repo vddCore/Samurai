@@ -16,8 +16,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="SamuraiUI.cs">
-      <DependentUpon>SamuraiUI.axaml</DependentUpon>
+    <Compile Update="Samurai.UI.cs">
+      <DependentUpon>Samurai.UI.axaml</DependentUpon>
     </Compile>
   </ItemGroup>
 

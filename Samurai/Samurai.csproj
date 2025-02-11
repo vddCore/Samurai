@@ -48,4 +48,8 @@
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
+
+  <ItemGroup>
+    <AvaloniaResource Include="Resources\Images\samurai_appicon_32x.png" />
+  </ItemGroup>
 </Project>

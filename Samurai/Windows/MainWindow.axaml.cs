@@ -1,10 +1,10 @@
 namespace Samurai.Windows;
 
-using Avalonia.Controls;
+using Glitonea.UI;
 using PropertyChanged;
 
 [DoNotNotify]
-public partial class MainWindow : Window
+public partial class MainWindow : FluentWindow
 {
     public MainWindow()
     {

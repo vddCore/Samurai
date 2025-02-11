@@ -1,9 +1,69 @@
 <gui:FluentWindow xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:gui="clr-namespace:Glitonea.UI;assembly=Glitonea.UI"
-        x:Class="Samurai.Windows.MainWindow"
-        Title="Samurai">
-    <Grid>
-        
+                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                  xmlns:gui="clr-namespace:Glitonea.UI;assembly=Glitonea.UI"
+                  x:Class="Samurai.Windows.MainWindow"
+                  Title="Samurai">
+    <gui:FluentWindow.Background>
+        <LinearGradientBrush SpreadMethod="Reflect">
+            <LinearGradientBrush.GradientStops>
+                <GradientStop Color="#44D03270"
+                              Offset="0" />
+                <GradientStop Color="#448D34DD"
+                              Offset="1" />
+            </LinearGradientBrush.GradientStops>
+        </LinearGradientBrush>
+    </gui:FluentWindow.Background>
+
+    <Grid RowDefinitions="Auto,Auto,*">
+        <Border Grid.Row="0"
+                Height="{Binding $parent[gui:FluentWindow].CaptionBarHeight}"
+                Padding="{Binding $parent[gui:FluentWindow].CaptionBarPadding}">
+            <Grid ColumnDefinitions="Auto,*,140">
+                <!-- Last column intentionally left empty (caption buttons) -->
+                <Image Grid.Column="0"
+                       Margin="10,0,0,0"
+                       Width="16"
+                       Height="16"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       Source="avares://Samurai/Resources/Images/samurai_appicon_32x.png"
+                       RenderOptions.BitmapInterpolationMode="HighQuality"
+                       RenderOptions.RequiresFullOpacityHandling="True"
+                       RenderOptions.EdgeMode="Antialias">
+                    <Image.Effect>
+                        <DropShadowEffect OffsetX="0"
+                                          OffsetY="0"
+                                          Color="White"
+                                          Opacity="0.45"
+                                          BlurRadius="1" />
+                    </Image.Effect>
+                </Image>
+            </Grid>
+        </Border>
+
+        <Rectangle x:Name="PART_CaptionSeparator"
+                   Height="1"
+                   Grid.Row="1"
+                   HorizontalAlignment="Stretch">
+            <Rectangle.Fill>
+                <LinearGradientBrush StartPoint="0%,0%"
+                                     EndPoint="100%,0%">
+                    <LinearGradientBrush.GradientStops>
+                        <GradientStop Color="Transparent"
+                                      Offset="0.015" />
+                        <GradientStop Color="#55FFFFFF"
+                                      Offset="0.50" />
+                        <GradientStop Color="Transparent"
+                                      Offset="0.985" />
+                    </LinearGradientBrush.GradientStops>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
     </Grid>
+    
+    <gui:FluentWindow.Styles>
+        <Style Selector=":maximized Rectangle#PART_CaptionSeparator">
+            <Setter Property="Margin" Value="0,4,0,0"></Setter>
+        </Style>
+    </gui:FluentWindow.Styles>
 </gui:FluentWindow>
