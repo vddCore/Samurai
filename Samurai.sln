@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Samurai", "Samurai\Samurai.csproj", "{BF0E0BB7-BC76-4393-A725-FD30BC029268}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glitonea", "Glitonea\Glitonea.csproj", "{36934E65-7EE4-402D-B31F-6300252DE37F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BF0E0BB7-BC76-4393-A725-FD30BC029268}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF0E0BB7-BC76-4393-A725-FD30BC029268}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF0E0BB7-BC76-4393-A725-FD30BC029268}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF0E0BB7-BC76-4393-A725-FD30BC029268}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36934E65-7EE4-402D-B31F-6300252DE37F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36934E65-7EE4-402D-B31F-6300252DE37F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36934E65-7EE4-402D-B31F-6300252DE37F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36934E65-7EE4-402D-B31F-6300252DE37F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

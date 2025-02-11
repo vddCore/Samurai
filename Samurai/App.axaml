@@ -1,0 +1,15 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:glitonea="clr-namespace:Glitonea;assembly=Glitonea"
+             xmlns:sty="using:FluentAvalonia.Styling"
+             x:Class="Samurai.App"
+             RequestedThemeVariant="Default">
+
+    <Application.Resources>
+        <glitonea:Glitonea />
+    </Application.Resources>
+             
+    <Application.Styles>
+        <sty:FluentAvaloniaTheme />
+    </Application.Styles>
+</Application>
