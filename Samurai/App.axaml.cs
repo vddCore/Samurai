@@ -4,6 +4,7 @@ using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
 using PropertyChanged;
+using Samurai.Windows;
 
 [DoNotNotify]
 public partial class App : Application

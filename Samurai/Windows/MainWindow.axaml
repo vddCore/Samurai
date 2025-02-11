@@ -1,0 +1,9 @@
+<gui:FluentWindow xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:gui="clr-namespace:Glitonea.UI;assembly=Glitonea.UI"
+        x:Class="Samurai.Windows.MainWindow"
+        Title="Samurai">
+    <Grid>
+        
+    </Grid>
+</gui:FluentWindow>

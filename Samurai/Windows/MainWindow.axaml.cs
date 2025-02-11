@@ -1,4 +1,4 @@
-namespace Samurai;
+namespace Samurai.Windows;
 
 using Avalonia.Controls;
 using PropertyChanged;

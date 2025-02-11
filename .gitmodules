@@ -1,3 +1,6 @@
 [submodule "Glitonea"]
 	path = Glitonea
 	url = git@github.com:vddCore/Glitonea.git
+[submodule "Glitonea.UI"]
+	path = Glitonea.UI
+	url = git@github.com:vddCore/Glitonea.UI
