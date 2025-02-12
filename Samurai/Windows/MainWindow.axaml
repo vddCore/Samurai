@@ -13,18 +13,33 @@
             </LinearGradientBrush.GradientStops>
         </LinearGradientBrush>
     </gui:FluentWindow.Background>
-
-    <Grid RowDefinitions="Auto,Auto,*">
-        <Border Grid.Row="0"
-                Height="{Binding $parent[gui:FluentWindow].CaptionBarHeight}"
-                Padding="{Binding $parent[gui:FluentWindow].CaptionBarPadding}">
-            <Grid ColumnDefinitions="Auto,*,140">
+    
+    <gui:FluentWindow.CaptionBar>
+        <Border Name="PART_CaptionBorder"
+                Grid.Row="0"
+                Background="#99000000"
+                BorderThickness="0,0,0,1">
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0%,0%"
+                                     EndPoint="100%,0%">
+                    <LinearGradientBrush.GradientStops>
+                        <GradientStop Color="Transparent"
+                                      Offset="0.005" />
+                        <GradientStop Color="#55FFFFFF"
+                                      Offset="0.50" />
+                        <GradientStop Color="Transparent"
+                                      Offset="0.995" />
+                    </LinearGradientBrush.GradientStops>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+            <Grid ColumnDefinitions="16,*,140">
                 <!-- Last column intentionally left empty (caption buttons) -->
-                <Image Grid.Column="0"
+                <Image x:Name="PART_CaptionIcon"
+                       Grid.Column="0"
                        Margin="10,0,0,0"
                        Width="16"
                        Height="16"
-                       HorizontalAlignment="Center"
+                       HorizontalAlignment="Left"
                        VerticalAlignment="Center"
                        Source="avares://Samurai/Resources/Images/samurai_appicon_32x.png"
                        RenderOptions.BitmapInterpolationMode="HighQuality"
@@ -40,30 +55,23 @@
                 </Image>
             </Grid>
         </Border>
+    </gui:FluentWindow.CaptionBar>
 
-        <Rectangle x:Name="PART_CaptionSeparator"
+    <Grid>
+
+
+        <Rectangle Grid.Row="1"
+                   Name="PART_CaptionSeparator"
                    Height="1"
-                   Grid.Row="1"
                    HorizontalAlignment="Stretch">
             <Rectangle.Fill>
-                <LinearGradientBrush StartPoint="0%,0%"
-                                     EndPoint="100%,0%">
-                    <LinearGradientBrush.GradientStops>
-                        <GradientStop Color="Transparent"
-                                      Offset="0.015" />
-                        <GradientStop Color="#55FFFFFF"
-                                      Offset="0.50" />
-                        <GradientStop Color="Transparent"
-                                      Offset="0.985" />
-                    </LinearGradientBrush.GradientStops>
-                </LinearGradientBrush>
+
             </Rectangle.Fill>
         </Rectangle>
+
+        <Grid Grid.Row="2"
+              Background="#BB000000">
+
+        </Grid>
     </Grid>
-    
-    <gui:FluentWindow.Styles>
-        <Style Selector=":maximized Rectangle#PART_CaptionSeparator">
-            <Setter Property="Margin" Value="0,4,0,0"></Setter>
-        </Style>
-    </gui:FluentWindow.Styles>
 </gui:FluentWindow>
