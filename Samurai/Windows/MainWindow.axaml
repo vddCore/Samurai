@@ -17,7 +17,6 @@
     <gui:FluentWindow.CaptionBar>
         <Border Name="PART_CaptionBorder"
                 Grid.Row="0"
-                Background="#99000000"
                 BorderThickness="0,0,0,1">
             <Border.BorderBrush>
                 <LinearGradientBrush StartPoint="0%,0%"
