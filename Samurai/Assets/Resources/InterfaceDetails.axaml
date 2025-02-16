@@ -1,0 +1,28 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <LinearGradientBrush x:Key="HorizontalSeparatorGradientBrush"
+                         StartPoint="0%,0%"
+                         EndPoint="100%,0%">
+        <LinearGradientBrush.GradientStops>
+            <GradientStop Color="Transparent"
+                          Offset="0.002" />
+            <GradientStop Color="#55FFFFFF"
+                          Offset="0.50" />
+            <GradientStop Color="Transparent"
+                          Offset="0.998" />
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush>
+    
+    <LinearGradientBrush x:Key="VerticalSeparatorGradientBrush"
+                         StartPoint="0%,0%"
+                         EndPoint="0%,100%">
+        <LinearGradientBrush.GradientStops>
+            <GradientStop Color="Transparent"
+                          Offset="0.002" />
+            <GradientStop Color="#55FFFFFF"
+                          Offset="0.50" />
+            <GradientStop Color="Transparent"
+                          Offset="0.998" />
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush>
+</ResourceDictionary>

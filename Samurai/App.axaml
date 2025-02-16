@@ -10,6 +10,7 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <gli:Glitonea />
+                <ResourceInclude Source="avares://Samurai/Assets/Resources/InterfaceDetails.axaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

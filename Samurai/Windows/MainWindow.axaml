@@ -2,75 +2,151 @@
                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                   xmlns:gui="clr-namespace:Glitonea.UI;assembly=Glitonea.UI"
                   x:Class="Samurai.Windows.MainWindow"
-                  Title="Samurai">
+                  Title="Samurai"
+                  Icon="avares://Samurai/Assets/Images/samurai_appicon_32x.png"
+                  ShowFullScreenButton="True">
+    <gui:FluentWindow.FullScreenButtonBackgroundBrush>
+        <LinearGradientBrush StartPoint="0%,0%"
+                             EndPoint="100%,100%">
+            <LinearGradientBrush.GradientStops>
+                <GradientStop Color="#AAD03270"
+                              Offset="0" />
+                <GradientStop Color="#AA8D34DD"
+                              Offset="1" />
+            </LinearGradientBrush.GradientStops>
+        </LinearGradientBrush>
+    </gui:FluentWindow.FullScreenButtonBackgroundBrush>
+    
+    <gui:FluentWindow.MinimizeButtonBackgroundBrush>
+        <LinearGradientBrush StartPoint="0%,0%"
+                             EndPoint="100%,100%">
+            <LinearGradientBrush.GradientStops>
+                <GradientStop Color="#AAD03270"
+                              Offset="0" />
+                <GradientStop Color="#AA8D34DD"
+                              Offset="1" />
+            </LinearGradientBrush.GradientStops>
+        </LinearGradientBrush>
+    </gui:FluentWindow.MinimizeButtonBackgroundBrush>
+    
+    <gui:FluentWindow.MaximizeButtonBackgroundBrush>
+        <LinearGradientBrush StartPoint="0%,0%"
+                             EndPoint="100%,100%">
+            <LinearGradientBrush.GradientStops>
+                <GradientStop Color="#AAD03270"
+                              Offset="0" />
+                <GradientStop Color="#AA8D34DD"
+                              Offset="1" />
+            </LinearGradientBrush.GradientStops>
+        </LinearGradientBrush>
+    </gui:FluentWindow.MaximizeButtonBackgroundBrush>
+    
+    <gui:FluentWindow.CloseButtonBackgroundBrush>
+        <LinearGradientBrush StartPoint="0%,0%"
+                             EndPoint="100%,100%">
+            <LinearGradientBrush.GradientStops>
+                <GradientStop Color="#CCD03270"
+                              Offset="0" />
+                <GradientStop Color="#EEFF146D"
+                              Offset="1" />
+            </LinearGradientBrush.GradientStops>
+        </LinearGradientBrush>
+    </gui:FluentWindow.CloseButtonBackgroundBrush>
+    
     <gui:FluentWindow.Background>
         <LinearGradientBrush SpreadMethod="Reflect">
             <LinearGradientBrush.GradientStops>
-                <GradientStop Color="#44D03270"
+                <GradientStop Color="#33D03270"
                               Offset="0" />
-                <GradientStop Color="#448D34DD"
+                <GradientStop Color="#338D34DD"
                               Offset="1" />
             </LinearGradientBrush.GradientStops>
         </LinearGradientBrush>
     </gui:FluentWindow.Background>
-    
+
+    <gui:FluentWindow.CaptionBarBackground>
+        <LinearGradientBrush SpreadMethod="Reflect">
+            <LinearGradientBrush.GradientStops>
+                <GradientStop Color="#33D03270"
+                              Offset="0" />
+                <GradientStop Color="#338D34DD"
+                              Offset="1" />
+            </LinearGradientBrush.GradientStops>
+        </LinearGradientBrush>
+    </gui:FluentWindow.CaptionBarBackground>
+
     <gui:FluentWindow.CaptionBar>
         <Border Name="PART_CaptionBorder"
                 Grid.Row="0"
-                BorderThickness="0,0,0,1">
-            <Border.BorderBrush>
-                <LinearGradientBrush StartPoint="0%,0%"
-                                     EndPoint="100%,0%">
-                    <LinearGradientBrush.GradientStops>
-                        <GradientStop Color="Transparent"
-                                      Offset="0.005" />
-                        <GradientStop Color="#55FFFFFF"
-                                      Offset="0.50" />
-                        <GradientStop Color="Transparent"
-                                      Offset="0.995" />
-                    </LinearGradientBrush.GradientStops>
-                </LinearGradientBrush>
-            </Border.BorderBrush>
-            <Grid ColumnDefinitions="16,*,140">
-                <!-- Last column intentionally left empty (caption buttons) -->
-                <Image x:Name="PART_CaptionIcon"
-                       Grid.Column="0"
-                       Margin="10,0,0,0"
-                       Width="16"
-                       Height="16"
-                       HorizontalAlignment="Left"
-                       VerticalAlignment="Center"
-                       Source="avares://Samurai/Resources/Images/samurai_appicon_32x.png"
-                       RenderOptions.BitmapInterpolationMode="HighQuality"
-                       RenderOptions.RequiresFullOpacityHandling="True"
-                       RenderOptions.EdgeMode="Antialias">
-                    <Image.Effect>
-                        <DropShadowEffect OffsetX="0"
-                                          OffsetY="0"
-                                          Color="White"
-                                          Opacity="0.45"
-                                          BlurRadius="1" />
-                    </Image.Effect>
-                </Image>
+                BorderThickness="0,0,0,1"
+                BorderBrush="{DynamicResource HorizontalSeparatorGradientBrush}">
+            <Grid ColumnDefinitions="Auto,Auto,*,Auto">
+                <Viewbox Grid.Column="0"
+                         Width="16"
+                         Height="16"
+                         Margin="14,0,0,0"
+                         IsVisible="{Binding $parent[gui:FluentWindow].ShowIcon}">
+                    <Image Source="{Binding $parent[gui:FluentWindow].Icon}"
+                           RenderOptions.EdgeMode="Antialias"
+                           RenderOptions.BitmapInterpolationMode="HighQuality"
+                           RenderOptions.RequiresFullOpacityHandling="True" />
+                </Viewbox>
+
+                <Menu Grid.Column="1"
+                      Margin="8,0,0,0"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Center">
+                    <MenuItem Header="_File">
+                        <MenuItem></MenuItem>
+                        <Separator />
+                        <MenuItem Header="E_xit" />
+                    </MenuItem>
+                    
+                    <MenuItem Header="_Edit">
+                        <MenuItem Header="_Copy" 
+                                  InputGesture="Ctrl+C" />
+                        <MenuItem Header="C_ut" 
+                                  InputGesture="Ctrl+X" />
+                        <MenuItem Header="_Paste"
+                                  InputGesture="Ctrl+V" />
+                        <Separator />
+                        <MenuItem Header="Preferences..."
+                                  InputGesture="Ctrl+K" />
+                    </MenuItem>
+                    
+                    <MenuItem Header="_View" />
+                    <MenuItem Header="_Help" />
+                </Menu>
+                
+                <TextBlock Grid.Column="2"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           Text="{Binding $parent[gui:FluentWindow].Title}"
+                           Foreground="{DynamicResource TextControlForeground}" />
+                
+                <Menu Grid.Column="3"
+                      VerticalAlignment="Center">
+                    <MenuItem Header="_Account">
+                        <MenuItem Header="_Login" />
+                        <MenuItem Header="_Profile" />
+                    </MenuItem>
+                </Menu>
             </Grid>
         </Border>
     </gui:FluentWindow.CaptionBar>
 
-    <Grid>
-
-
-        <Rectangle Grid.Row="1"
-                   Name="PART_CaptionSeparator"
-                   Height="1"
-                   HorizontalAlignment="Stretch">
-            <Rectangle.Fill>
-
-            </Rectangle.Fill>
-        </Rectangle>
-
-        <Grid Grid.Row="2"
-              Background="#BB000000">
-
+    <Grid ColumnDefinitions="320,3,*"
+          Background="#88000000">
+        <Grid Grid.Column="0"
+              Background="#44000000">
         </Grid>
+
+        <GridSplitter Grid.Column="1"
+                      ResizeDirection="Columns"
+                      MinWidth="2"
+                      BorderThickness="1,0,0,0"
+                      Background="{x:Null}"
+                      BorderBrush="{DynamicResource VerticalSeparatorGradientBrush}">
+        </GridSplitter>
     </Grid>
 </gui:FluentWindow>
